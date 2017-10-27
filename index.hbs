@@ -4,11 +4,20 @@
 
 {{^is "paged"}}
 
-<section id="cover" class="cover u-flex-wrap" style="min-height:100vh">
+<section id="cover" class="cover u-flex-wrap">
     {{#if @blog.cover_image}}<div class="cover-background lazy" data-original="{{@blog.cover_image}}"></div>{{/if}}
     <div class="cover-wrap u-flex-aling-center">
         {{!-- Blog name --}}
-        <h1 id="title-home" class="cover-title animated bounceInDown">{{@blog.title}}</h1>
+
+        {{#if @blog.logo}}
+            <h1 id="title-home" class="cover-title animated bounceInDown">
+                <img src="{{@blog.logo}}" alt="{{@blog.title}}"/>
+                <span class="header-logo-bg" style="display:none;background-image:url({{@blog.logo}})"></span>
+            </h1>
+        {{else}}
+            <h1 id="title-home" class="cover-title animated bounceInDown">{{@blog.title}}</h1>
+        {{/if}}
+        
         {{!-- Blog description --}}
         <p class="cover-description animated bounceIn">{{@blog.description}}</p>
         {{!-- Btn suscribe --}}
