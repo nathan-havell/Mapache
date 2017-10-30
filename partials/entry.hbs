@@ -11,8 +11,8 @@
         {{/if}}
 
         <div class="col s12 {{#if feature_image}}entry-body{{/if}}">
-            {{#if tags}}<div class="entry-category">{{tags limit="1"}}</div>{{/if}}
             <h2 class="entry-title"><a href="{{url}}" title="{{title}}">{{title}}</a></h2>
+            {{#if tags}}<div class="entry-category">{{tags separator=" &bullet; "}}</div>{{/if}}
 
             <div class="entry-byline">
                 {{#author}} By <a class="entry-author" href="{{url}}">{{name}}</a> <span style="margin: 0 5px">/</span> {{/author}}
